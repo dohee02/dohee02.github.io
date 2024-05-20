@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="outer">
+      <p class="text">What kind of rest do you want to have?</p>
+      <section class="button-container">
+        <p>Active</p>
+        <button class="mood-button" id="m1-button"></button>
+        <button class="mood-button" id="m2-button"></button>
+        <button class="mood-button" id="m3-button"></button>
+        <button class="mood-button" id="m4-button"></button>
+        <p>Relax</p>
+      </section>
+      <p class="text">How long do you want to rest?</p>
+      <section class="audio-control">
+        <audio id="music-audio">
+          <!-- audio 옆에 control 없애면 오디오가 존재는 하지만 안보임 -->
+          <source
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+            type="audio/mpeg"
+          />
+          no browswer support for audio
+        </audio>
+        <section>
+          <span>0 minute</span>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <button class="timer-button"></button>
+          <span>60 minute</span>
+        </section>
+        <section>
+          <button id="play-pause-btn">Play</button>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
