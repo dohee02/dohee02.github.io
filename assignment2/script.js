@@ -62,5 +62,5 @@ function playPauseMusic() {
     myMusic.play();
     // playPauseButton.innerHTML = "Pause";
   }
-  // myMusic.play();
+  myMusic.play();
 }
