@@ -5,7 +5,7 @@ body {
   display: flex;
   /* text-align: center; */
   margin: auto;
-  max-width: 1000px;
+  max-width: 1800px;
   justify-content: center;
   align-items: center;
   font-family: "Constantia", sans-serif;
@@ -29,45 +29,8 @@ body {
   /* flex-wrap: wrap; */
 }
 
-img {
-  cursor: pointer;
-}
-
-.inner {
-  background-color: #d5cea3;
-  width: 200px;
-  height: 100px;
-  margin: 10px auto;
-  border: 2px dotted #3c2a21;
-  padding: 10px;
-  /* line-height: 80px; */
-}
-
-.round {
-  border-radius: 50%;
-}
-
-.video-container {
-  display: flex;
-  gap: 1rem;
-  /* flex-wrap: wrap; */
-}
-
-.video-container > video {
-  /* flex: 1; */
-  width: 75%;
-}
-
-.video-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  /* width: 200px; */
-  flex: 1;
-}
-
 .text {
-  font-size: medium;
+  font-size: large;
 }
 
 .mood-control {
@@ -97,31 +60,40 @@ p {
 }
 
 .button-container span {
+  font-size: larger;
   margin-left: 8px;
   margin-right: 8px;
 }
 
 .audio-control {
   display: none;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* .audio-control button {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  margin: 5px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-} */
+.satisfaction-section {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .timer-button button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  margin: 10px;
+  margin: 5px;
   background-color: lightgray;
 }
 
@@ -132,6 +104,16 @@ p {
   background-color: lightgray;
   color: black;
   margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.review-button button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 5px;
+  font-size: small;
+  margin-bottom: 20px;
 }
 
 #m1-button {
@@ -145,39 +127,4 @@ p {
 }
 #m4-button {
   background-color: rgb(67, 164, 67);
-}
-
-.video-controls {
-  display: flex;
-  gap: 1rem;
-}
-
-.video-controls button {
-  width: 30px;
-  height: 30px;
-}
-
-.video-title {
-  display: flex;
-  justify-content: space-between;
-}
-
-.video-title h1 {
-  font-size: 1.2rem;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #e5e5cb68;
-  margin-top: 10px;
-  overflow: hidden;
-}
-
-.progress-bar span {
-  display: block;
-  height: 100%;
-  background-color: coral;
-  width: 0;
-  transition: width 0.3s ease;
 }

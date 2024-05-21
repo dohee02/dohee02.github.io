@@ -20,8 +20,8 @@ m4Button.addEventListener("click", changeMoodTo4);
 function changeMoodTo1() {
   Mood.bgColor = "rgb(255, 167, 120)";
   Mood.btnColor = "rgb(245, 117, 70)";
-  Mood.musicSpeed = 1.8;
-  Mood.musicVolume = 2;
+  Mood.musicSpeed = 5;
+  Mood.musicVolume = 1.0;
   moodChange();
   showAudioControl();
 }
@@ -29,8 +29,8 @@ function changeMoodTo1() {
 function changeMoodTo2() {
   Mood.bgColor = "rgb(255, 240, 105)";
   Mood.btnColor = "rgb(243, 170, 35)";
-  Mood.musicSpeed = 1.25;
-  Mood.musicVolume = 1;
+  Mood.musicSpeed = 2;
+  Mood.musicVolume = 0.6;
   moodChange();
   showAudioControl();
 }
@@ -38,8 +38,8 @@ function changeMoodTo2() {
 function changeMoodTo3() {
   Mood.bgColor = "rgb(204, 255, 100)";
   Mood.btnColor = "rgb(154, 205, 50)";
-  Mood.musicSpeed = 0.9;
-  Mood.musicVolume = 0.8;
+  Mood.musicSpeed = 1;
+  Mood.musicVolume = 0.4;
   moodChange();
   showAudioControl();
 }
@@ -47,8 +47,8 @@ function changeMoodTo3() {
 function changeMoodTo4() {
   Mood.bgColor = "rgb(117, 214, 117)";
   Mood.btnColor = "rgb(67, 164, 67)";
-  Mood.musicSpeed = 0.75;
-  Mood.musicVolume = 0.5;
+  Mood.musicSpeed = 0.5;
+  Mood.musicVolume = 0.2;
   moodChange();
   showAudioControl();
 }
@@ -61,7 +61,10 @@ const myMusic = document.querySelector("#music-audio");
 
 function moodChange() {
   document.querySelector("body").style.backgroundColor = Mood.bgColor;
+  playPauseButton.style.backgroundColor = Mood.btnColor;
   setTimerColor(timeRange);
+  myMusic.playbackRate = Mood.musicSpeed;
+  myMusic.volume = Mood.musicVolume;
 }
 
 function showAudioControl() {
@@ -95,7 +98,6 @@ var tBtnArr = [
   t11Button,
   t12Button,
 ];
-// var tSetFuncArr = [setTimer5, set]
 
 t1Button.addEventListener("click", setTimer5);
 t2Button.addEventListener("click", setTimer10);
@@ -187,12 +189,47 @@ function setTimer60() {
 playPauseButton.addEventListener("click", playPauseMusic);
 
 function playPauseMusic() {
-  if (myMusic.paused) {
-    myMusic.pause();
-    // playPauseButton.innerHTML = "Play";
-  } else {
-    myMusic.play();
-    // playPauseButton.innerHTML = "Pause";
+  if (isTimerSet) {
+    if (myMusic.paused || myMusic.end) {
+      myMusic.play();
+      setInterval(updateTime, 1000 * 60);
+      playPauseButton.innerHTML = "Pause";
+    } else {
+      myMusic.pause();
+      playPauseButton.innerHTML = "Play";
+    }
   }
-  myMusic.play();
+}
+
+// myMusic.addEventListener("timeupdate", updateTime);
+
+function updateTime() {
+  if (!myMusic.paused) {
+    timeRange = timeRange - 5;
+    setTimerColor(timeRange);
+  }
+  if (timeRange <= 0) {
+    myMusic.pause();
+    playPauseButton.innerHTML = "Play";
+    showReview();
+  }
+}
+
+const highButton = document.querySelector("#high-button");
+const midButton = document.querySelector("#mid-button");
+const lowButton = document.querySelector("#low-button");
+
+function showReview() {
+  document.querySelector(".satisfaction-section").style.display = "flex";
+  highButton.style.backgroundColor = Mood.btnColor;
+  midButton.style.backgroundColor = "lightgray";
+  lowButton.style.backgroundColor = "gray";
+}
+
+highButton.addEventListener("click", showFooter);
+midButton.addEventListener("click", showFooter);
+lowButton.addEventListener("click", showFooter);
+
+function showFooter() {
+  document.querySelector(".footer").style.display = "flex";
 }
