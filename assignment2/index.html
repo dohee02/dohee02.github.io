@@ -16,6 +16,7 @@
   </head>
   <body>
     <div class="outer">
+      <!-- 1. Mood Control Section -->
       <section class="mood-control">
         <p class="text">What kind of rest do you want to have?</p>
         <section class="button-container">
@@ -26,15 +27,14 @@
             <button id="m3-button"></button>
             <button id="m4-button"></button>
           </section>
-
           <span>Relax</span>
         </section>
       </section>
 
+      <!-- 2. Audio Control Section -->
       <section class="audio-control">
         <p class="text">How long do you want to rest?</p>
         <audio loop id="music-audio">
-          <!-- audio 옆에 control 없애면 오디오가 존재는 하지만 안보임 -->
           <source
             src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
             type="audio/mpeg"
@@ -57,13 +57,14 @@
             <button id="t11-button"></button>
             <button id="t12-button"></button>
           </section>
-
           <span>60 minute</span>
         </section>
         <section>
           <button id="play-pause-btn">Play</button>
         </section>
       </section>
+
+      <!-- 3. Review Section -->
       <section class="satisfaction-section">
         <p class="text">How was this relaxation?</p>
         <section class="review-button">
@@ -72,9 +73,12 @@
           <button id="low-button">Bad rest</button>
         </section>
       </section>
+
+      <!-- Footer -->
       <section class="footer">
         <p class="text">Thank you for relaxing with me.</p>
         <p class="text">Assignment Draft : <a href="doheePark_MusicPlayerForRelaxation_s4077396.pdf">link</a></p>
+        <!-- You can see the draft through the link -->
       </section>
     </div>
   </body>

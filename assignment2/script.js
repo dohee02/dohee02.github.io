@@ -1,9 +1,13 @@
+// 1. Mood Control Section
+
 const Mood = {
   bgColor: "lemonchiffon",
   btnColor: "lemonchiffon",
   musicSpeed: 1,
   musicVolume: 1,
 };
+// You can choose a tempo and volume size of the music as what kind of relaxation you want.
+// The color will be changed followed your Mood.
 
 const m1Button = document.querySelector("#m1-button");
 m1Button.addEventListener("click", changeMoodTo1);
@@ -53,13 +57,19 @@ function changeMoodTo4() {
   showAudioControl();
 }
 
-var isTimerSet = false;
-var timeRange = 0;
+// If you choose mood, next step will be shown.
+//----------------------------------------------------------------------
 
-const playPauseButton = document.querySelector("#play-pause-btn");
+// 2. Audio Control Section
+
+var isTimerSet = false; // You can play the music only after setting timer.
+var timeRange = 0; // This value is related with your Relaxation minute.
+
 const myMusic = document.querySelector("#music-audio");
+const playPauseButton = document.querySelector("#play-pause-btn");
 
 function moodChange() {
+  // If you change the mood after playing music, the speed and volume will be changed.
   document.querySelector("body").style.backgroundColor = Mood.bgColor;
   playPauseButton.style.backgroundColor = Mood.btnColor;
   setTimerColor(timeRange);
@@ -71,6 +81,7 @@ function showAudioControl() {
   document.querySelector(".audio-control").style.display = "flex";
 }
 
+// Those buttons are related with the Time Range.
 const t1Button = document.querySelector("#t1-button");
 const t2Button = document.querySelector("#t2-button");
 const t3Button = document.querySelector("#t3-button");
@@ -99,6 +110,7 @@ var tBtnArr = [
   t12Button,
 ];
 
+// If you click the timer button between 0 min and 60 min, the timer will be set.
 t1Button.addEventListener("click", setTimer5);
 t2Button.addEventListener("click", setTimer10);
 t3Button.addEventListener("click", setTimer15);
@@ -111,19 +123,6 @@ t9Button.addEventListener("click", setTimer45);
 t10Button.addEventListener("click", setTimer50);
 t11Button.addEventListener("click", setTimer55);
 t12Button.addEventListener("click", setTimer60);
-
-function setTimerColor(timeRange) {
-  for (var i = 0; i < 12; i++) {
-    if (i < timeRange / 5) {
-      tBtnArr[i].style.backgroundColor = Mood.btnColor;
-    } else {
-      tBtnArr[i].style.backgroundColor = "lightgray";
-    }
-  }
-  if (timeRange != 0) {
-    playPauseButton.style.backgroundColor = Mood.btnColor;
-  }
-}
 
 function setTimer5() {
   timeRange = 5;
@@ -186,13 +185,28 @@ function setTimer60() {
   setTimerColor(timeRange);
 }
 
+// As the time goes, Timer buttons color will be changed.
+function setTimerColor(timeRange) {
+  for (var i = 0; i < 12; i++) {
+    if (i < timeRange / 5) {
+      tBtnArr[i].style.backgroundColor = Mood.btnColor;
+    } else {
+      tBtnArr[i].style.backgroundColor = "lightgray";
+    }
+  }
+  if (timeRange != 0) {
+    playPauseButton.style.backgroundColor = Mood.btnColor;
+  }
+}
+
+// This part is related with playing/pausing music.
 playPauseButton.addEventListener("click", playPauseMusic);
 
 function playPauseMusic() {
   if (isTimerSet) {
     if (myMusic.paused || myMusic.end) {
       myMusic.play();
-      setInterval(updateTime, 1000 * 60);
+      setInterval(updateTime, 1000 * 60 * 5); // The time will be recorded in each of 5 min.
       playPauseButton.innerHTML = "Pause";
     } else {
       myMusic.pause();
@@ -201,11 +215,9 @@ function playPauseMusic() {
   }
 }
 
-// myMusic.addEventListener("timeupdate", updateTime);
-
 function updateTime() {
   if (!myMusic.paused) {
-    timeRange = timeRange - 5;
+    timeRange = timeRange - 5; // The time will be recorded in each of 5 min.
     setTimerColor(timeRange);
   }
   if (timeRange <= 0) {
@@ -214,6 +226,11 @@ function updateTime() {
     showReview();
   }
 }
+
+// If the time range finishes, Review Section will be shown.
+//----------------------------------------------------------------------
+
+// 3. Review Section
 
 const highButton = document.querySelector("#high-button");
 const midButton = document.querySelector("#mid-button");
@@ -229,6 +246,11 @@ function showReview() {
 highButton.addEventListener("click", showFooter);
 midButton.addEventListener("click", showFooter);
 lowButton.addEventListener("click", showFooter);
+
+// If you finish review, Footer will be displayed.
+//----------------------------------------------------------------------
+
+// 4. Footer
 
 function showFooter() {
   document.querySelector(".footer").style.display = "flex";
