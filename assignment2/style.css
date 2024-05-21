@@ -122,13 +122,14 @@ p {
   height: 32px;
   border-radius: 50%;
   margin: 10px;
+  background-color: lightgray;
 }
 
 #play-pause-btn {
   width: 100px;
   height: 50px;
   border-radius: 10%;
-  background-color: lemonchiffon;
+  background-color: lightgray;
   color: black;
   margin-top: 10px;
 }
