@@ -272,3 +272,13 @@ main {
   font-size: 1.2rem;
   font-weight: 600;
 }
+#go-to-history {
+  position: absolute;
+  top: 300px;
+}
+#go-to-history a {
+  color: rgb(29, 143, 224);
+
+  font-size: 1.2rem;
+  font-weight: 700;
+}
