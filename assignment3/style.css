@@ -1,0 +1,274 @@
+/* https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb */
+
+body {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #e5e5cb;
+  /* color: #3c2a21; */
+  font-size: 1.1rem;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  /* background-color: cornsilk; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem;
+  font-size: 1.2rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+nav a:link {
+  text-decoration: none;
+  color: black;
+}
+nav a:visited {
+  color: black;
+}
+
+nav li:hover,
+nav span:hover {
+  scale: 0.9;
+}
+
+#intro {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* .navigation {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.navigation img {
+  width: 70px;
+} */
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  scale: 0.9;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#contact-button {
+  color: black;
+}
+
+#contact-content {
+  display: none;
+  margin-right: 10px;
+  position: absolute;
+  top: 100%; /* Position the content below the button */
+  right: 0;
+  /* background-color: cornsilk; */
+  min-width: 130px;
+  z-index: 1;
+  text-align: right;
+}
+
+/* Links inside the dropdown */
+#contact-content a {
+  color: darkblue;
+  padding: 12px 16px;
+  display: block;
+}
+
+#contact-content.show {
+  display: block;
+}
+
+main {
+  /* background-color: rgb(191, 229, 246); */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+  /* margin: auto; */
+  width: 100%;
+  font-size: 3rem;
+  /* height: 600vh; */
+  height: 26000px;
+  /* padding: 10px; */
+}
+
+#scroll-text {
+  color: black;
+  position: fixed;
+  top: 200;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+#welcome-text {
+  color: white;
+  position: fixed;
+  top: 300;
+  font-weight: 700;
+}
+
+#earth-box {
+  background-color: rgb(103, 178, 225);
+  position: fixed;
+  bottom: -300px;
+  height: 150;
+  width: 100%;
+}
+
+.sea-wave {
+  /* fill: rgb(14, 42, 94); */
+  /* filter: brightness(0) saturate(100%) invert(8%) sepia(76%) saturate(3782%) hue-rotate(218deg) brightness(89%)
+    contrast(90%); */
+  filter: brightness(0) saturate(100%) invert(99%) sepia(10%) saturate(61%) hue-rotate(210deg) brightness(110%)
+    contrast(100%);
+  position: absolute;
+  /* height: 120px; */
+}
+
+#sea-wave1 {
+  bottom: 80px;
+  left: 70%;
+  height: 80px;
+}
+
+#sea-wave2 {
+  bottom: 45px;
+  left: 15%;
+  height: 100px;
+}
+
+#sea-wave3 {
+  bottom: 0px;
+  left: 45%;
+  height: 120px;
+}
+
+/* #island1 {
+  position: fixed;
+  bottom: 150;
+  height: 100;
+  left: 200;
+} */
+
+#island2 {
+  position: absolute;
+  bottom: 150px;
+  height: 80;
+  left: 60%;
+}
+
+#cloud-box {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  height: 100%;
+  /* left: 100px; */
+}
+
+.clouds {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(10%) saturate(61%) hue-rotate(210deg) brightness(110%)
+    contrast(100%);
+  position: absolute;
+}
+
+#cloud1 {
+  height: 150;
+  bottom: 35%;
+  left: 5%;
+}
+#cloud2 {
+  height: 200;
+  bottom: 30%;
+  left: 10%;
+}
+#cloud3 {
+  height: 170;
+  bottom: 25%;
+  left: 55%;
+}
+#cloud4 {
+  height: 200;
+  bottom: 28%;
+  left: 80%;
+}
+#cloud5 {
+  height: 140;
+  bottom: 26%;
+  left: 85%;
+}
+
+#airplane {
+  height: 400;
+  position: fixed;
+  bottom: 200;
+  /* left: 38%; */
+  right: 100%;
+}
+
+#title-box {
+  /* display: flex; */
+  display: none;
+  /* background-color: red; */
+  justify-content: center;
+  position: fixed;
+  top: 38%;
+  width: 40%;
+}
+
+#title {
+  color: black;
+  position: absolute;
+
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+#sub-text {
+  color: black;
+  position: absolute;
+  top: 120px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
