@@ -14,89 +14,197 @@ body {
   /* color: #3c2a21; */
   font-size: 1.1rem;
   scroll-behavior: smooth;
-}
-/* 
-header {
-  position: fixed;
-  top: 0;
-  height: 70px;
-  width: 100%;
-  background-color: cornsilk;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.4rem;
+  /* height: 100%; */
 }
 
-nav {
+#history-container {
+  /* background-color: red; */
+  position: fixed;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  height: calc(100% - 70px);
+  top: 70px;
+  /* gap: 2rem; */
+  /* margin: auto; */
+  /* justify-content: space-between; */
 }
 
-nav a:link {
-  text-decoration: none;
-  color: black;
-}
-
-#intro {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-} */
-
-.navigation {
+#free-airplane {
+  z-index: 5;
+  /* font-size: 7.5rem; */
+  width: 120px;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1.2rem;
+  top: 10%;
+  left: 50%;
+  -webkit-user-drag: none;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
-
-.navigation img {
-  width: 70px;
-}
-
-button {
-  border: none;
-  background-color: transparent;
+#free-airplane:hover {
+  scale: 1.2;
   cursor: pointer;
 }
 
-button:hover {
-  scale: 0.8;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-main {
+#map-outer-box {
+  /* background-color: yellow; */
   display: flex;
-  /* flex-direction: column; */
-  gap: 2rem;
-  margin: auto;
-  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 40vmax);
+  height: calc(100vh - 70px);
 }
 
-.slides {
-  border: 2px dashed #e5e5cb7a;
-  width: 100vw;
-  font-size: 4rem;
-  height: 100vh;
-  padding: 10px;
+#map-inner-box {
+  /* background-color: red; */
+  /* width: 100%; */
+  height: 100%;
+  /* overflow: auto; */
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  /* overflow: contain; */
+}
+
+#map-inner-box button {
+  color: black;
+  position: fixed;
+  top: 70px;
+}
+
+#map-shape {
+  /* background-color: green; */
+  width: calc(95vh - 70px);
+  /* height: calc(95vh - 70px); */
+  margin: 10px;
+  /* width: 100%; */
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+
+#image-container {
+  position: relative;
+  width: 100%;
+  /* background-color: chartreuse; */
+}
+#image-container::after {
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+
+#map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  border-radius: 50%;
+  -webkit-user-drag: none;
+}
+
+.arr {
+  /* background-color: red; */
+  z-index: 7;
+  /* background-color: red; */
+  width: 100px;
+  /* height: 10; */
+  /* content: ""; */
+  position: absolute;
+  text-align: start;
+  /* pointer-events: none; */
+}
+.arr img {
+  filter: drop-shadow(3px 3px 2px rgb(0 0 0 / 0.4));
+  width: 45px;
+}
+.arr p {
+  font-size: 0.7rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  gap: 0;
+  font-weight: 900;
+  color: darkblue;
+  text-shadow: 3px 3px 2px rgb(0 0 0 / 0.4);
+}
+#hawaii-arr {
+  top: 60%;
+  left: 100%;
+  opacity: 0;
+}
+#korea-arr {
+  top: 45%;
+  left: 61%;
+}
+#uz-arr {
+  top: 40%;
+  left: 13%;
+}
+
+#direction-container {
+  position: fixed;
+  top: 50%;
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  width: calc(100% - 40vmax);
+
+  /* height: 50px; */
+  z-index: 7;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  /* background-color: peru; */
+}
+#direction-container button {
+  /* position: absolute; */
+  /* background-color: pink; */
+  color: darkcyan;
+  font-size: 3.5rem;
+  width: 48;
+  margin: 0;
+}
+#direction-container button:hover {
+  color: gold;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: darkcyan;
+}
+p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 10px;
+  color: beige;
+}
+
+#info-outer-box {
+  position: absolute;
+  /* background-color: rgb(103, 178, 225); */
+  background-color: skyblue;
+  top: 0;
+  right: 0;
+  width: 40vmax;
+  height: 100%;
+  min-height: 650px;
+  text-align: left;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+#info-inner-box {
+  height: calc(100% * 3);
+}
+
+.infos {
+  /* background-color: yellow; */
+  /* height: ; */
+  padding: 25px;
+  height: calc(100% / 3);
 }

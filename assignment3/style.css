@@ -27,6 +27,7 @@ header {
   align-items: center;
   padding: 1.8rem;
   font-size: 1.2rem;
+  z-index: 3;
 }
 
 nav {
@@ -45,7 +46,7 @@ nav a:visited {
 
 nav li:hover,
 nav span:hover {
-  scale: 0.9;
+  scale: 1.1;
 }
 
 #intro {
@@ -83,13 +84,13 @@ button {
 }
 
 button:hover {
-  scale: 0.9;
+  scale: 1.1;
 }
 
-button:disabled {
+/* button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
+} */
 
 #contact-button {
   color: black;
@@ -120,16 +121,17 @@ button:disabled {
 
 main {
   /* background-color: rgb(191, 229, 246); */
+  /* position: relative; */
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   /* gap: 2rem; */
-  /* margin: auto; */
+  /* top: 100px; */
+  height: 26000px;
   width: 100%;
   font-size: 3rem;
-  /* height: 600vh; */
-  height: 26000px;
+  /* margin: auto; */
   /* padding: 10px; */
 }
 
@@ -277,7 +279,7 @@ main {
   top: 240px;
 }
 #go-to-history a {
-  color: rgb(29, 143, 224);
+  color: rgb(0, 255, 102);
 
   font-size: 1.2rem;
   font-weight: 700;

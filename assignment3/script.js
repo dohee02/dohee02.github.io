@@ -11,8 +11,9 @@ let lastKnownScrollPosition = 0;
 let ticking = false;
 let isFirstScroll = true;
 
-const scrollText = document.querySelector("#scroll-text");
+const body = document.querySelector("body");
 const container = document.querySelector("#container");
+const scrollText = document.querySelector("#scroll-text");
 const welcomeText = document.querySelector("#welcome-text");
 // const airplaneAudio = document.querySelector("#airplane-audio");
 const airplane = document.querySelector("#airplane");
@@ -31,6 +32,8 @@ let seawaveSpeed = 35;
 let cloudSpeed = 1.2;
 // let airplaneOutX = 41.67;
 // let airplaneUpSize = 400;
+
+// container.backgroundColor = red;
 
 function doSomething(scrollPos) {
   // Do something with the scroll position
@@ -68,8 +71,8 @@ function doSomething(scrollPos) {
     airplane.style.right = `${105 - (scrollPos - 500) / 30}%`;
   } else if (scrollPos >= 2400 && scrollPos < 20500) {
     airplane.style.right = "41.67%";
-    container.style.backgroundColor = `rgb(${191 + (51 * (scrollPos - 2400)) / 18100},${
-      229 - (52 * (scrollPos - 2400)) / 18100
+    body.style.backgroundColor = `rgb(${191 - (121 * (scrollPos - 2400)) / 18100},${
+      229 - (120 * (scrollPos - 2400)) / 18100
     },${246 - (65 * (scrollPos - 2400)) / 18100})`;
     earthBox.style.opacity = 1;
     cloudBox.style.opacity = 1;
@@ -117,7 +120,8 @@ function doSomething(scrollPos) {
 
   if (scrollPos >= 20500) {
     welcomeText.style.opacity = 0;
-    container.style.backgroundColor = "rgb(242,177,181)";
+    // container.style.backgroundColor = "rgb(242,177,181)";
+    container.style.backgroundColor = "rgb(70,109,181)";
   }
 
   if (scrollPos >= 20000) {
