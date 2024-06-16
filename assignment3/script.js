@@ -71,7 +71,7 @@ function doSomething(scrollPos) {
     airplane.style.right = `${105 - (scrollPos - 500) / 30}%`;
   } else if (scrollPos >= 2400 && scrollPos < 20500) {
     airplane.style.right = "41.67%";
-    body.style.backgroundColor = `rgb(${191 - (121 * (scrollPos - 2400)) / 18100},${
+    container.style.backgroundColor = `rgb(${191 - (121 * (scrollPos - 2400)) / 18100},${
       229 - (120 * (scrollPos - 2400)) / 18100
     },${246 - (65 * (scrollPos - 2400)) / 18100})`;
     earthBox.style.opacity = 1;
