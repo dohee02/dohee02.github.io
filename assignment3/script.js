@@ -11,7 +11,7 @@ let lastKnownScrollPosition = 0;
 let ticking = false;
 let isFirstScroll = true;
 
-const body = document.querySelector("body");
+// const body = document.querySelector("body");
 const container = document.querySelector("#container");
 const scrollText = document.querySelector("#scroll-text");
 const welcomeText = document.querySelector("#welcome-text");
